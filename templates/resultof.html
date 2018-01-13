@@ -1,0 +1,85 @@
+$def with (res)
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>result of shop</title>
+        <link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+        <link rel="stylesheet" href="static/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/demo.css">
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/css/btn.css">
+        <link rel="stylesheet" type="text/css" href="static/css/main_a79c03f.css">
+        <link rel="stylesheet" type="text/css" href="static/css/nav_92fb35c.css">
+        <link rel="stylesheet" type="text/css" href="static/css/common_4840c98.css">
+        <link rel="stylesheet" type="text/css" href="static/css/shopcard_93f9a30.css">
+        <link rel="stylesheet" type="text/css" href="static/css/shoplist_b2c246e.css">
+    </head>
+    <body>
+            <header class="header">
+                <div class="ui-width header-wrap">
+                    <div class="search d7">
+                            <form action="/sms">
+                                <input type="text" name="keyword" placeholder="搜索商家..." >
+                                <button type="submit"></button>
+                            </form>
+                            <div class="search d6"><form action="/" method="GET">
+                                <input id="minhangs" type="submit" value="搜商家">
+                            </form> 
+                            <form action="/mf" method="GET">
+                                <input id="minhangf" type="submit" value="搜外卖">
+                            </form> </div>
+                        </div> 
+                
+                </div>
+            </header>
+            <div class="main">
+            <section class="shop-list" id="shop-list">
+            <div class="list-wrap">
+            <div class="list clearfix">
+        $if res:
+            <h2 class="sr-block-title"><i class="shop"></i>商户($len(res))</h2>   
+            <ul class="shopcards-list"> 
+            $for shop in res:     
+                <li class="list-item shopcard data online" ismarket="0" data="0">                
+                <a href="$shop[1]">
+                <div class="shopimg">                                                                            
+                    <img data-src="$shop[7]" 
+                    alt="$shop[0]" 
+                    src="$shop[7]" height="140" width="228">                                            
+                </div>        
+                <div class="title" title="$shop[0]">            
+                    $shop[0][:10]     
+                </div>                
+                <div class="info s-info clearfix">            
+                    <div class="f-col f-star star-control" data-star="$shop[2]">               
+                            <span class="rate">                    
+                                <span class="rate-inner" style="width:69.12px"></span>                
+                        </span>            
+                    </div>            
+                    <div class="f-col f-sale">                                
+                        月售<span>$shop[3]</span>份                            
+                    </div>        
+                </div>        
+                <div class="info f-info clearfix">            
+                    <div class="f-col f-price">                
+                        <span class="item-label">起送:</span>                
+                        <span class="item-value">¥$shop[4]</span>            
+                    </div>            
+                        <div class="f-col f-cost">                
+                            <span class="item-label">配送:</span>                
+                            <span class="item-value">¥$shop[5]</span>           
+                        </div>            
+                        <div class="f-col f-time"> $shop[6] </div>        
+                </div>        
+                </a>     
+                    </li>       
+        
+        $else:
+            <span>对不起，没有找到对应的外卖QAQ</span>
+        </div>
+        </section>               
+        </div>
+        </div>
+        </body>
+    </html>

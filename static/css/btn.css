@@ -1,0 +1,37 @@
+* {box-sizing: border-box;}
+body{margin: 0;}
+div.search {padding: 30px 0}
+form {
+  position: relative;
+  width: 300px;
+  left:-50px;
+  bottom:25px
+}
+
+.d6 input {
+  width: 80px;
+  height: 42px;
+  border-radius: 42px;
+  border: 2px solid #e21818;
+  background: rgb(247, 244, 238);
+  outline: none;
+  position: relative;
+  transition: .3s linear;
+}
+.d6 input:hover {
+  width: 120px;
+}
+.d6 button {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: -2px;
+  right: 0;
+}
+.d6 button:before{
+  content: "\f002";
+  font-family: FontAwesome;
+  color: #1b0000;
+}

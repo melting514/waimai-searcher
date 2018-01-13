@@ -1,0 +1,158 @@
+<html>
+    <head><meta charset="utf-8" />  
+        <meta name="615team" content="zcr"/>  
+        <title>The main page</title> 
+        <link rel="stylesheet" href="static/css/btn.css"> 
+        <style type="text/css">
+        #nav {
+        line-height:30px;
+        background-color:#eeeeee00;
+        height:700px;
+        width:180px;
+        float:left;
+        margin-top: -350px;
+        margin-left:80px; 
+        }
+        /*固定容器*/
+        #A { 
+            width: 700px; 
+            height: 60px; 
+            margin: 22% auto; 
+            border: 1px solid #A3A3A3; 
+            border-top-color: #939393; 
+            border-bottom-color: #D5D5D5; 
+            border-radius: 3px; 
+            box-shadow: 0px 1px 1px #f4f4f4; 
+            position: relative; }
+        #A > * { position: absolute; top: 0px; }
+        /*输入框*/
+        #inputTxt { 
+            left: 0; 
+            width: 700px; 
+            height: 60px; 
+            background: rgba(255, 255, 255, 0.431);  
+            border: 0; 
+            border-top: 1px solid #C8C8C8; 
+            border-bottom: 1px solid #E6E6E6; 
+            outline: none; 
+            padding-left: 90px; 
+            font-size: x-large; 
+            color: #666;
+             }
+        #inputTxt::-webkit-input-placeholder,#inputTxt::-moz-placeholder 
+        { color: #B8B8B8; font: 600 13px 'Gautami'; }
+        /*按钮*/
+        #inputBtn { 
+            right: 0; 
+            width: 80px;
+            height: 58px; 
+            line-height: 58px; 
+            background: linear-gradient(rgb(243, 242, 242), rgb(214, 213, 213)); 
+            border: 1px solid transparent; 
+            border-top-color: #FCFCFC; 
+            border-left-color: #ADADAD; 
+            border-bottom-color: #B5B5B5; 
+            color: #6E6E6E; 
+            text-align: center; 
+            font-size: x-large; 
+            font-weight: bold; 
+            cursor: pointer; }
+        /*文字阴影*/
+        #inputTxt, #inputBtn, #inputTxt::-webkit-input-placeholder,#inputTxt::-moz-placeholder { text-shadow: 1px 1px 0px #fff; }
+        /*图标*/
+        #A:before, #A:after { 
+            content: ""; 
+            position: absolute; 
+            z-index: 2; 
+            box-shadow: 0px 1px 0px #fff; }
+        #A:before { 
+            left: 18px; 
+            top: 18px; 
+            width: 12px; 
+            height: 12px; 
+            border: 4px solid #ccc; 
+            border-radius: 50%; }
+        #A:after { 
+            left: 34px; 
+            top: 36px;
+            width: 12px; 
+            height: 4px; 
+            background: #ccc; 
+            transform: rotate(45deg); 
+            -webkit-transform: rotate(45deg); 
+            -o-transform: rotate(45deg); }
+        </style>
+    </head>
+    <body>
+        <img src="/static/index.jpg" width="100%" height="100%" style="z-index:-100;position:absolute;left:0;top:0">
+        <div id="nav">
+            <table width="80">
+                    <tr>
+                    <td>
+                            <form style="width:80px" action="/mf" method="GET">
+                                <input id="xuhuif" type="submit" value="闵行校区">
+                            </form>  
+                    </td>
+                    <td>
+                            <form style="width:80px" action="/" method="GET">
+                                <input id="minhangs" type="submit" value="搜商家">
+                            </form> 
+                    </td>
+                    <td>
+                                <form action="/hb" method="GET" enctype="multipart/form-data" name="upload_form">
+
+                                    <label>选择图片文件</label>
+                                  
+                                   <input name="imgfile" type="file" accept="image/gif, image/jpeg"/>
+                                  
+                                    <input name="upload" type="submit" value="上传" />
+                                  
+                                  </form>
+                        </td>
+                    </tr>
+            </table>
+            <table width="280">
+                <tr>
+                <td>
+                    <nobr><div style="color:rgb(255, 255, 255)">你可能想搜</div></nobr><br>
+                </td>
+                </tr>
+                <tr>
+                <td><div class="search d6"><form style="width:85px" action="/hb" method="GET">
+                    <input id="mftp" type="submit" value="汉堡"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/fan" method="GET">
+                    <input id="mftp" type="submit" value="饭"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/yrc" method="GET">
+                    <input id="mftp" type="submit" value="羊肉串"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/nc" method="GET">
+                    <input id="mftp" type="submit" value="奶茶"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/zhou" method="GET">
+                    <input id="mftp" type="submit" value="粥"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/mb" method="GET">
+                    <input id="mftp" type="submit" value="面包"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/zj" method="GET">
+                    <input id="mftp" type="submit" value="炸鸡"> </form> 
+                </div></td>
+                <td><div class="search d6"><form style="width:85px" action="/mian" method="GET">
+                    <input id="mftp" type="submit" value="面"> </form> 
+                </div></td>
+                </tr> 
+            </table>
+                
+                 
+        </div>
+        <div id="A">
+            <form action="/sxf" method="GET">
+                <input id="inputTxt" name="keyword" type="text" placeholder="Search"/>
+                <input id="inputBtn" type="submit" value="Go">
+            </form>       
+        </div>     
+    </body>
+</html> 
+    
